@@ -28,9 +28,9 @@ const Header = ({alternateLink, backButtonURL, onBackButtonClick}: HeaderProps) 
 
     let freeBanner = null;
     if (license.IsLicensed === 'false') {
-        freeBanner = <><Logo/><span className='freeBadge'>{'TEAM EDITION'}</span></>;
+        freeBanner = <><Logo/><span className='freeBadge'>{'AVAP EDITION'}</span></>;
     } else if (license.SkuShortName === LicenseSkus.Entry) {
-        freeBanner = <><Logo/><span className='freeBadge'>{'ENTRY EDITION'}</span></>;
+        freeBanner = <><Logo/><span className='freeBadge'>{'AVAP EDITION'}</span></>;
     }
 
     let title: React.ReactNode = SiteName;
