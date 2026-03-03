@@ -123,7 +123,7 @@ const (
 	ServiceSettingsDefaultMaxURLLength           = 2048
 	ServiceSettingsMaxUniqueReactionsPerPost     = 500
 
-	TeamSettingsDefaultSiteName              = "Mattermost"
+	TeamSettingsDefaultSiteName              = "Avapmost"
 	TeamSettingsDefaultMaxUsersPerTeam       = 50
 	TeamSettingsDefaultCustomBrandText       = ""
 	TeamSettingsDefaultCustomDescriptionText = ""
