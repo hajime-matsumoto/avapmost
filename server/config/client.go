@@ -416,9 +416,6 @@ func GenerateLimitedClientConfig(c *model.Config, telemetryID string, license *m
 			props["EnableSignUpWithOpenId"] = strconv.FormatBool(*c.OpenIdSettings.Enable)
 			props["OpenIdButtonColor"] = *c.OpenIdSettings.ButtonColor
 			props["OpenIdButtonText"] = *c.OpenIdSettings.ButtonText
-			props["EnableSignUpWithGitLab"] = strconv.FormatBool(*c.GitLabSettings.Enable)
-			props["GitLabButtonColor"] = *c.GitLabSettings.ButtonColor
-			props["GitLabButtonText"] = *c.GitLabSettings.ButtonText
 		}
 
 		if model.MinimumEnterpriseLicense(license) {
@@ -444,6 +441,11 @@ func GenerateLimitedClientConfig(c *model.Config, telemetryID string, license *m
 			}
 		}
 	}
+
+	// GitLab SSO is available in all editions (no license gate)
+	props["EnableSignUpWithGitLab"] = strconv.FormatBool(*c.GitLabSettings.Enable)
+	props["GitLabButtonColor"] = *c.GitLabSettings.ButtonColor
+	props["GitLabButtonText"] = *c.GitLabSettings.ButtonText
 
 	for key, value := range c.FeatureFlags.ToMap() {
 		props["FeatureFlag"+key] = value
