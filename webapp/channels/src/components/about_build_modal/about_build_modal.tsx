@@ -374,7 +374,7 @@ export default function AboutBuildModal(props: Props) {
                         <div className='about-modal__copyright'>
                             <FormattedMessage
                                 id='about.copyright'
-                                defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved'
+                                defaultMessage='© {currentYear} AVAP Co.,Ltd | Based on Mattermost © Mattermost, Inc.'
                                 values={{
                                     currentYear: new Date().getFullYear(),
                                 }}

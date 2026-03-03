@@ -81,9 +81,9 @@ export default class LicenseSettings extends React.PureComponent<Props> {
                                         {', an open source messaging platform developed by Mattermost, Inc. This fork is developed and maintained by AVAP-INC.'}
                                     </p>
                                     <p>
-                                        {'Copyright © 2015 - '}
+                                        {'© '}
                                         {currentYear}
-                                        {' Mattermost, Inc. All rights reserved.'}
+                                        {' AVAP Co.,Ltd | Based on Mattermost © Mattermost, Inc.'}
                                     </p>
                                     <hr style={{borderColor: 'rgba(var(--center-channel-color-rgb), 0.12)', margin: '16px 0'}}/>
                                     <h4 style={{marginTop: 0}}>{'Mattermost License'}</h4>
