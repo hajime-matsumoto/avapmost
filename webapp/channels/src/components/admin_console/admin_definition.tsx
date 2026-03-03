@@ -4397,10 +4397,6 @@ const AdminDefinition: AdminDefinitionType = {
                 url: 'authentication/oauth',
                 title: defineMessage({id: 'admin.sidebar.oauth', defaultMessage: 'OAuth 2.0'}),
                 isHidden: it.any(
-                    it.any(
-                        it.not(it.licensed),
-                        it.licensedForSku('starter'),
-                    ),
                     it.all(
                         it.licensedForFeature('OpenId'),
                         it.not(usesLegacyOauth),
@@ -5117,9 +5113,7 @@ const AdminDefinition: AdminDefinitionType = {
                 url: 'authentication/gitlab',
                 isDiscovery: true,
                 title: defineMessage({id: 'admin.sidebar.gitlab', defaultMessage: 'GitLab'}),
-                isHidden: it.any(
-                    it.licensedForFeature('OpenId'),
-                ),
+                isHidden: () => true, // GitLab SSO is configured via OAuth 2.0 page in Avapmost
                 schema: {
                     id: 'GitLabSettings',
                     name: defineMessage({id: 'admin.authentication.gitlab', defaultMessage: 'GitLab'}),
