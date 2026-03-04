@@ -5,7 +5,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components';
 
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
 
 import launcherIcon from 'images/avapmost_launcher.png';
 
@@ -45,6 +45,9 @@ const Badge = styled.span`
 
 const ProductBrandingFreeEdition = (): JSX.Element => {
     const license = useSelector(getLicense);
+    const config = useSelector(getConfig);
+
+    const siteName = config?.SiteName || 'Avapmost';
 
     let badgeText = '';
     if (license?.SkuShortName === LicenseSkus.Entry) {
@@ -60,9 +63,9 @@ const ProductBrandingFreeEdition = (): JSX.Element => {
                 height={24}
                 width={24}
                 style={{borderRadius: '6px'}}
-                alt='Avapmost'
+                alt={siteName}
             />
-            <ProductBrandingHeading>{'Avapmost'}</ProductBrandingHeading>
+            <ProductBrandingHeading>{siteName}</ProductBrandingHeading>
             <Badge>{badgeText}</Badge>
         </ProductBrandingFreeEditionContainer>
     );
